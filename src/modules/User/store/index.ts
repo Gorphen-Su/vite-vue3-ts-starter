@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { sleep } from '@/utils/request'
 
 export interface IUserModule {
   locale: string

@@ -1,4 +1,3 @@
-import Cookie from 'js-cookie'
 import { allowlist } from '@/router/auth-list'
 import { systemTitle } from '@/locales/data'
 
@@ -17,7 +16,7 @@ export function createRouterGuards(router: Router) {
 
     document.title = `${ to.meta.title || '' } - ${ systemTitle }`
 
-    const currentRouteLocale = to.params.locale
+    // const currentRouteLocale = to.params.locale
 
     if (
       allowlist.find(
@@ -52,7 +51,7 @@ export function createRouterGuards(router: Router) {
     next()
   })
 
-  router.afterEach((to) => {
+  router.afterEach(() => {
     NProgress.done()
   })
 }

@@ -1,13 +1,11 @@
 <script lang="ts">
 import { localesMapping } from '@/locales'
 
-import { ArrowDown } from '@element-plus/icons-vue'
 import LogoIcon from '@/locales/LogoIcon.vue'
 
 export default defineComponent({
   name: 'TranslationsBox',
   components: {
-    ArrowDown,
     LogoIcon
   },
   props: {
@@ -16,12 +14,12 @@ export default defineComponent({
       default: false
     }
   },
-  setup () {
+  setup() {
     const route = useRoute()
     const router = useRouter()
     const store = useBaseStore()
     const localesList = ref(localesMapping)
-    const currentLocale = computed(() => store.UserAccount.locale)
+    const currentLocale = computed(() => store.User.locale)
 
     const handleChange = (targetLocaleItem) => {
       setTimeout(() => {
@@ -32,9 +30,9 @@ export default defineComponent({
             locale: localeCode
           }
         })
-        store.UserAccount.setLanguage({
-          locale: localeCode
-        })
+        store.User.setLanguage(
+          localeCode
+        )
       })
     }
     return {
@@ -47,31 +45,19 @@ export default defineComponent({
 </script>
 
 <template>
-  <el-dropdown
-    class="translations-box"
-    popper-class="translations-box"
-    :class="{
-      'is-dark': dark
-    }"
-    trigger="hover"
-    @command="handleChange"
-  >
+  <el-dropdown class="translations-box" popper-class="translations-box" :class="{
+    'is-dark': dark
+  }" trigger="hover" @command="handleChange">
     <span class="icon-outer">
       <!-- Translations<el-icon class="el-icon--right">
         <ArrowDown />
       </el-icon> -->
-      <LogoIcon
-        :dark="dark"
-      />
+      <LogoIcon :dark="dark" />
     </span>
     <template #dropdown>
       <el-dropdown-menu>
-        <el-dropdown-item
-          v-for="(localeItem, index) in localesList"
-          :key="index"
-          :command="localeItem"
-          :disabled="currentLocale === localeItem.localeCode"
-        >
+        <el-dropdown-item v-for="(localeItem, index) in localesList" :key="index" :command="localeItem"
+          :disabled="currentLocale === localeItem.localeCode">
           <span class="custom-dropdown-item">
             {{ localeItem.localeName }}
           </span>
@@ -99,7 +85,7 @@ export default defineComponent({
     align-items: center;
     outline: none;
 
-    &:hover > * {
+    &:hover>* {
       color: $color-primary;
     }
   }

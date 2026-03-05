@@ -1,9 +1,10 @@
+import { router } from '@/router'
 import type { AxiosInstance } from 'axios'
 import axios from 'axios'
-import Cookie from 'js-cookie'
 
 // redirect error
 function errorRedirect (url: string) {
+  router.push(`/${ url }`)
   // Router.push(`/${url}`)
 }
 
@@ -64,7 +65,7 @@ const service: AxiosInstance = axios.create({
 // request拦截器
 service.interceptors.request.use(
   request => {
-    const token = Cookie.get('token')
+    // const token = Cookie.get('token')
 
     /**
      * 让每个请求携带自定义 token

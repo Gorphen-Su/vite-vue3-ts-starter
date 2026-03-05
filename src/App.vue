@@ -2,7 +2,6 @@
 import { defaultLanguageLocale } from '@/locales'
 const store = useBaseStore()
 const route = useRoute()
-const router = useRouter()
 
 const { currentLocaleLang } = useLanguage()
 

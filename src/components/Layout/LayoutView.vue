@@ -9,8 +9,6 @@ export default defineComponent({
     NavigationSideGoBack
   },
   setup () {
-    const router = useRouter()
-    const store = useBaseStore()
 
     return {
     }

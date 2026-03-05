@@ -5,7 +5,7 @@ const history = process.env.VITE_ROUTER_MODE === 'hash'
   ? createWebHashHistory()
   : createWebHistory()
 
-const router = createRouter({
+export const router = createRouter({
   history,
   routes
 })

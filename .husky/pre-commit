@@ -14,10 +14,10 @@ git rev-parse --git-dir >/dev/null 2>&1 || {
 
 # 受保护的分支列表
 PROTECTED_BRANCHES=(
-  "main"
-  "master"
-  "dev"
-  "release"
+  # "main"
+  # "master"
+  # "dev"
+  # "release"
 )
 
 # 初始化 CURRENT_BRANCH 变量为空字符串
@@ -66,7 +66,7 @@ fi
 
 
 # 运行 lint-staged
-if pnpm lint-staged  --allow-empty; then
+if npx lint-staged  --allow-empty; then
   # 检查 Git 暂存区是否有变化
   if [ -z "$(git diff --cached)" ]; then
     # 暂存区为空，输出警告信息

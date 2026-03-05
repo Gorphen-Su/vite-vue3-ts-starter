@@ -1,9 +1,3 @@
-import { currentLocaleMap, localesMapping } from '@/locales'
-import { isUndefined } from '@/utils/type'
-
-const Layout = () => import('@/components/Layout/index.vue')
-
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
