@@ -1,121 +1,91 @@
 # vite-ts-starter
 
-English | [中文](README-zh.md)
 
-[![Deploy](https://github.com/pdsuwwz/vite-ts-starter/workflows/gh-pages/badge.svg)](https://github.com/pdsuwwz/vite-ts-starter/actions/workflows/deploy.yml)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/pdsuwwz/vite-ts-starter/deploy.yml?branch=main)](https://github.com/pdsuwwz/vite-ts-starter/deployments/activity_log?environment=github-pages)
-[![thanks](https://badgen.net/badge/thanks/♥/pink)](https://github.com/pdsuwwz)
-[![License](https://img.shields.io/github/license/pdsuwwz/vite-ts-starter?color=blue)](https://github.com/pdsuwwz/vite-ts-starter/blob/main/LICENSE)
+[![thanks](https://badgen.net/badge/thanks/♥/pink)](https://github.com/Gorphen-Su)
+[![License](https://img.shields.io/github/license/pdsuwwz/vite-ts-starter?color=blue)](https://github.com/Gorphen-Su/vite-vue3-ts-starter/blob/main/LICENSE)
 
 🐬 A Starter template built on Vite 7.x + Vue 3.x + Element Plus 2.x + TypeScript + Husky + lint-staged.
 
-A ready-to-use prototype template framework for quickly developing management systems using Vue3 + Vite7 + TS, with continuous updates on the latest tech stack 💪
-
-[🚀 Online Playground](https://pdsuwwz.github.io/vite-ts-starter/#en)
-
-
-## 🌱 Different Versions
-Five different tech stack repo templates are maintained. Try them and pick the one that fits you.
-
-- 💥 (Recommended) [TS + Pinia + 🌐 Low-coupling (i18n) multilingual Vite7 + Vue3 + TS + Element-Plus2 + vue-i18n@next](https://github.com/pdsuwwz/vue-boilerplate-i18n)
-
-- ⚡️ TS + Pinia [Vite5 + Vue3 + TS + Pinia + Element-Plus2 + useLocale + i18n](https://github.com/pdsuwwz/pinia-starter-ts)
-- ⚡️ JS + Pinia [Vite5 + Vue3 + Pinia + Element-Plus2 + useLocale + i18n](https://github.com/pdsuwwz/vite-pinia-starter)
-
-- ⚡️ TS + Vuex4 (Current Repo)[Vite7 + Vue3 + TS + Vuex4 + Element-Plus2 + useLocale + i18n](https://github.com/pdsuwwz/vite-ts-starter)
-- ⚡️ JS + Vuex4 [Vite5 + Vue3 + Vuex4 + Element-Plus2 + useLocale + i18n](https://github.com/pdsuwwz/vite-starter)
-
-## 🪄 Using Different UI Libraries
-
-If you prefer using [Naive UI](https://www.naiveui.com/) as your UI library, we've also prepared several corresponding template projects for you. You can use these as a foundation for secondary business development and customization:
-
-- 🏄‍♂️ [Naive UI basic template](https://github.com/pdsuwwz/vite-naive-template)
-- 🗂️ [Naive UI Tab switching demo](https://github.com/pdsuwwz/vue3-tab-demo)
+一个开箱即用，适合快速开发 Vue3 + Vite7 + TS 中小型 B 端后台管理系统的原型模板项目框架，持续更新最新技术栈 💪
 
 
 ## 🎉 Features
 
-* Supports __Vite 7 + Vue 3 + TypeScript__
-* UI framework: __Element Plus 2.x__
-* State management: __Vuex 4__
-* Code standardization: __Husky + lint-staged__
-* Unit testing framework: ~~__Jest__~~ upgraded to __Vitest__
-* Built-in __ESlint__ and __Stylelint__, expandable for your desired Lint configuration
-* Built-in encapsulation of a **potentially useful** Axios, to be used with Vuex Actions when needed
-* Encapsulated \<IconFont \/> component for direct use of IconFont icons
-* Built-in global **$ModalDialog** plugin, supports dynamic service-style calls to display any component
-* Built-in i18n, supports language switching at VueRouter route level, allows writing internationalization config files and extending other languages
-* Pre-configured route authentication, along with Nprogress, just modify the `permission.ts` file
-* Comes with a modular component development environment, allowing decoupling of page components, route components, styles, etc. in the modules directory
-* Highly encapsulated yet flexible, with an abstracted complete business process for reference, involving three core pages: login, list, and details
-* Saves your configuration time, the project's **lightweight** nature allows you to focus solely on writing your business code
+* 支持 __Vite 7 + Vue 3 + TypeScript__
+* UI 框架: __Element Plus 2.x__
+* 状态管理: Pinia
+* 代码规范化检测: __Husky + lint-staged__
+* 单元测试框架: __Vitest__
+* 内置 __ESlint__ 和 __Stylelint__, 可在此基础上扩展你想要的 Lint 配置规范
+* 内置封装了一个**可能比较好用的** Axios , 需要时配合 Pinia Actions 一起食用
+* 封装了 \<IconFont \/> 组件, 可直接使用 IconFont 图标
+* 内置全局 **$ModalDialog** 插件, 支持使用 service 式地动态调用此插件来显示任意组件
+* 内置 i18n, 支持到 VueRouter 路由级别切换语言，可编写国际化配置文件及扩展其他语言
+* 路由鉴权已帮你封装好，同时配合 Nprogress, 只需要修改 permission.ts 文件即可
+* 自带一个模块化的组件开发环境，可按照 modules 目录解耦页面组件、路由组件、样式等文件
+* 高度封装但不失灵活，内部抽象出了一个完整的业务流程供你参考，涉及三个核心页面：登录、列表和明细
+* 节省你配置的时间，因此该项目的**轻量化**致使你只需要专心编写自己的业务代码即可
 
 
-## Environment Support
+## 前置条件
 
 * Vue 3.x
 * Node >= 22.12.x
-* Pnpm 9.x
-* **VSCode Extension `dbaeumer.vscode-eslint` >= v3.0.5 (pre-release)**
+* Pnpm 9.x | npm 11.6.x
+* **VS Code 插件 `dbaeumer.vscode-eslint` >= v3.0.5 (pre-release)**
 
 
-## Screenshot
 
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/19891724/154829635-46de24db-e4c5-409f-9fa5-6a9770ace166.png">
-<img width="1440" alt="image" src="https://user-images.githubusercontent.com/19891724/154829667-a84787b0-0104-4466-bb9e-9f586be66778.png">
+## 安装和运行
 
-
-## Install
-
-Run `pnpm i` to install the dependencies.
+* 安装依赖
 
 ```bash
 pnpm i
 ```
 
-## Run
-
-Run `pnpm dev` to start the frontend dev server.
+* 本地开发
 
 ```bash
 pnpm dev
 ```
 
-## Test
+## 单元测试
 
-Unit Testing.
+* 执行单测
 
 ```bash
 pnpm test
 ```
 
-Test code coverage.
+* 执行覆盖率测试
 
 ```bash
 pnpm test:coverage
 ```
 
-## 🌍 Internationalization (i18n) Setup
+## 🌍 国际化 i18n 设置
 
-This project supports multi-language settings, with `English` as the default language.
+本项目支持多语言设置，默认语言为 `English`.
 
-### Default Language Configuration
+### 默认语言配置
 
 
-The default language is set through the [`defaultLanguageLocale`](src/locales/index.ts#L43) constant. To change the default language, simply modify the value of this constant:
+默认语言通过 [`defaultLanguageLocale`](src/locales/index.ts#L43) 常量设置。要更改默认语言，只需修改此常量的值：
 
 ```ts
 export const defaultLanguageLocale = 'en'
 ```
 
-### Extending Supported Languages
+### 扩展支持的语言
 
-The project currently supports the following languages, as detailed in [src/locales/index.ts](src/locales/index.ts#L13):
+
+项目当前支持以下语言，详见代码[src/locales/index.ts](src/locales/index.ts#L13):
 
 ```ts
 export const localesMapping = [
   {
-    localeCode: 'zh-hans',
+    localeCode: 'zh-cn',
     localeName: '简体中文',
     localeLang: {...}
   },
@@ -127,28 +97,23 @@ export const localesMapping = [
 ]
 ```
 
-To add support for a new language:
+要添加新的语言支持:
 
-  * Add a new language object to the [`localesMapping`](src/locales/index.ts#L13) array
-  * Create a corresponding language file in the [`src/locales/lang/`](src/locales/lang/) directory (e.g., de.ts for German)
+  * 在 [`localesMapping`](src/locales/index.ts#L13) 数组中添加新的语言对象
+  * 在 [`src/locales/lang/`](src/locales/lang/) 目录下创建对应的语言文件（如 de.ts 为德语）
 
     ```
     ./lang
     ├── en.ts
-    └── zh-hans.ts
+    └── zh_cn.ts
     ```
-  * Import and merge the `Element Plus` language pack and custom language file, ensuring both UI components and custom content are localized.
+  * 导入并合并 `Element Plus` 语言包和自定义语言文件，确保 UI 组件和自定义内容均被本地化
 
 
-## 💡 Tip
+## 💡 提示
 
-* If Husky is not working, it may be due to incomplete initialization. Try running the following command to initialize:
+* 若 Husky 未生效，可能是由于未完成初始化，尝试执行以下命令进行初始化:
 
 ```bash
 pnpm run prepare
 ```
-
-
-## 😎 Awesome
-
-* [awesome-vite](https://github.com/pdsuwwz/awesome-vite)

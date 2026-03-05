@@ -10,10 +10,7 @@ declare global {
   const _: typeof import('lodash-es')
   const computed: typeof import('vue').computed
   const createApp: typeof import('vue').createApp
-  const createLogger: typeof import('vuex').createLogger
-  const createNamespacedHelpers: typeof import('vuex').createNamespacedHelpers
   const createRouter: typeof import('vue-router').createRouter
-  const createStore: typeof import('vuex').createStore
   const createVNode: typeof import('vue').createVNode
   const createWebHashHistory: typeof import('vue-router').createWebHashHistory
   const createWebHistory: typeof import('vue-router').createWebHistory
@@ -31,11 +28,6 @@ declare global {
   const isReadonly: typeof import('vue').isReadonly
   const isRef: typeof import('vue').isRef
   const isShallow: typeof import('vue').isShallow
-  const key: typeof import('./src/hooks/useBaseStore').key
-  const mapActions: typeof import('vuex').mapActions
-  const mapGetters: typeof import('vuex').mapGetters
-  const mapMutations: typeof import('vuex').mapMutations
-  const mapState: typeof import('vuex').mapState
   const markRaw: typeof import('vue').markRaw
   const nextTick: typeof import('vue').nextTick
   const onActivated: typeof import('vue').onActivated
@@ -77,12 +69,15 @@ declare global {
   const useId: typeof import('vue').useId
   const useLanguage: typeof import('./src/hooks/useLanguage').useLanguage
   const useLink: typeof import('vue-router').useLink
+  const useMainStore: typeof import('./src/hooks/useBaseStore').useMainStore
   const useModel: typeof import('vue').useModel
+  const useProjectStore: typeof import('./src/hooks/useBaseStore').useProjectStore
+  const useResultStore: typeof import('./src/hooks/useBaseStore').useResultStore
   const useRoute: typeof import('vue-router').useRoute
   const useRouter: typeof import('vue-router').useRouter
   const useSlots: typeof import('vue').useSlots
-  const useStore: typeof import('vuex').useStore
   const useTemplateRef: typeof import('vue').useTemplateRef
+  const useUserAccountStore: typeof import('./src/hooks/useBaseStore').useUserAccountStore
   const uuidv4: typeof import('uuid').v4
   const watch: typeof import('vue').watch
   const watchEffect: typeof import('vue').watchEffect
@@ -108,10 +103,7 @@ declare module 'vue' {
     readonly _: UnwrapRef<typeof import('lodash-es')>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
-    readonly createLogger: UnwrapRef<typeof import('vuex')['createLogger']>
-    readonly createNamespacedHelpers: UnwrapRef<typeof import('vuex')['createNamespacedHelpers']>
     readonly createRouter: UnwrapRef<typeof import('vue-router')['createRouter']>
-    readonly createStore: UnwrapRef<typeof import('vuex')['createStore']>
     readonly createVNode: UnwrapRef<typeof import('vue')['createVNode']>
     readonly createWebHashHistory: UnwrapRef<typeof import('vue-router')['createWebHashHistory']>
     readonly createWebHistory: UnwrapRef<typeof import('vue-router')['createWebHistory']>
@@ -129,11 +121,6 @@ declare module 'vue' {
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
     readonly isShallow: UnwrapRef<typeof import('vue')['isShallow']>
-    readonly key: UnwrapRef<typeof import('./src/hooks/useBaseStore')['key']>
-    readonly mapActions: UnwrapRef<typeof import('vuex')['mapActions']>
-    readonly mapGetters: UnwrapRef<typeof import('vuex')['mapGetters']>
-    readonly mapMutations: UnwrapRef<typeof import('vuex')['mapMutations']>
-    readonly mapState: UnwrapRef<typeof import('vuex')['mapState']>
     readonly markRaw: UnwrapRef<typeof import('vue')['markRaw']>
     readonly nextTick: UnwrapRef<typeof import('vue')['nextTick']>
     readonly onActivated: UnwrapRef<typeof import('vue')['onActivated']>
@@ -175,11 +162,11 @@ declare module 'vue' {
     readonly useId: UnwrapRef<typeof import('vue')['useId']>
     readonly useLanguage: UnwrapRef<typeof import('./src/hooks/useLanguage')['useLanguage']>
     readonly useLink: UnwrapRef<typeof import('vue-router')['useLink']>
+    readonly useMainStore: UnwrapRef<typeof import('./src/hooks/useBaseStore')['useMainStore']>
     readonly useModel: UnwrapRef<typeof import('vue')['useModel']>
     readonly useRoute: UnwrapRef<typeof import('vue-router')['useRoute']>
     readonly useRouter: UnwrapRef<typeof import('vue-router')['useRouter']>
     readonly useSlots: UnwrapRef<typeof import('vue')['useSlots']>
-    readonly useStore: UnwrapRef<typeof import('vuex')['useStore']>
     readonly useTemplateRef: UnwrapRef<typeof import('vue')['useTemplateRef']>
     readonly uuidv4: UnwrapRef<typeof import('uuid')['v4']>
     readonly watch: UnwrapRef<typeof import('vue')['watch']>

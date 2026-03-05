@@ -21,7 +21,7 @@ export default defineComponent({
     const router = useRouter()
     const store = useBaseStore()
     const localesList = ref(localesMapping)
-    const currentLocale = computed(() => store.state.UserAccount.locale)
+    const currentLocale = computed(() => store.UserAccount.locale)
 
     const handleChange = (targetLocaleItem) => {
       setTimeout(() => {
@@ -32,7 +32,7 @@ export default defineComponent({
             locale: localeCode
           }
         })
-        store.dispatch('UserAccount/setLanguage', {
+        store.UserAccount.setLanguage({
           locale: localeCode
         })
       })

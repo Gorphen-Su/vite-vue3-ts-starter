@@ -1,4 +1,3 @@
-import { store } from '@/store'
 import Cookie from 'js-cookie'
 import { allowlist } from '@/router/auth-list'
 import { systemTitle } from '@/locales/data'
@@ -11,12 +10,12 @@ NProgress.configure({
 })
 
 export function createRouterGuards(router: Router) {
+
   router.beforeEach(async (to, from, next) => {
+    // const userAccountStore = useUserAccountStore()
     NProgress.start()
 
     document.title = `${ to.meta.title || '' } - ${ systemTitle }`
-
-    globalThis.console.log('😄😄😄 ', to)
 
     const currentRouteLocale = to.params.locale
 
@@ -29,27 +28,27 @@ export function createRouterGuards(router: Router) {
       return
     }
 
-    if (!Cookie.get('token')) {
-      next(`/${ currentRouteLocale || store.state.UserAccount.locale }/user/login`)
-      return
-    }
+    // if (!Cookie.get('token')) {
+    //   next(`/${ currentRouteLocale || userAccountStore.locale }/user/login`)
+    //   return
+    // }
 
-    // 获取用户信息
-    const { data, error } = await store.dispatch('UserAccount/getUserInfo')
+    // // 获取用户信息
+    // const res = await userAccountStore.getUserInfo()
 
-    if (error) {
-      store.dispatch('UserAccount/setLanguage', {
-        locale: currentRouteLocale || data.language || store.state.UserAccount.locale
-      })
-      Cookie.remove('token')
-      next(`/${ currentRouteLocale || store.state.UserAccount.locale }/user/login`)
-      return
-    }
+    // if (res.error !== 0) {
+    //   userAccountStore.setLanguage({
+    //     locale: currentRouteLocale || res.data?.language || userAccountStore.locale
+    //   })
+    //   Cookie.remove('token')
+    //   next(`/${ currentRouteLocale || userAccountStore.locale }/user/login`)
+    //   return
+    // }
 
-    // TODO: It must be used together with the backend
-    store.dispatch('UserAccount/setLanguage', {
-      locale: currentRouteLocale || data.language
-    })
+    // // TODO: It must be used together with the backend
+    // userAccountStore.setLanguage({
+    //   locale: currentRouteLocale || res.data?.language
+    // })
     next()
   })
 

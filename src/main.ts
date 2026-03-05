@@ -7,7 +7,6 @@ import App from './App.vue'
 
 import '@/assets/fonts'
 
-import Mixin from '@/mixins'
 import Widgets from '@/widgets'
 
 const app = createApp(App)
@@ -15,7 +14,6 @@ const app = createApp(App)
 function setupPlugins() {
   app
     .use(Widgets)
-    .mixin(Mixin)
 }
 
 async function setupApp() {

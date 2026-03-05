@@ -13,13 +13,15 @@ import IconsResolver from 'unplugin-icons/resolver'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { loadEnv } from 'vite'
 
+import packageJson from './package.json'
+
 const htmlPlugin = () => {
   return {
     name: 'html-transform',
     transformIndexHtml (html) {
       return html.replace(
         /<title>(.*?)<\/title>/,
-        '<title>Vite TS Starter</title>'
+        `<title>${ packageJson.name }</title>`
       )
     }
   }
@@ -43,7 +45,6 @@ export default defineConfig(({ mode }) => {
         imports: [
           'vue',
           'vue-router',
-          'vuex',
           {
             'vue': [
               'createVNode',

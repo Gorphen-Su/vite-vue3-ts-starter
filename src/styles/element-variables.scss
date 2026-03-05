@@ -4,11 +4,11 @@
 
 /* theme color */
 // $color-primary: #4686FF;
-$color-primary: #3c40c6;
-$color-success: #52c41a;
-$color-warning: #faad14;
-$color-danger: #fa5555;
-$color-info: #909399;
+$color-primary: #1A85FF;
+$color-success: #09AA57;
+$color-warning: #FF7800;
+$color-danger: #EE1238;
+$color-info: #4D5F7C;
 $--colors: (
   "primary": (
     "base": $color-primary,
@@ -33,9 +33,9 @@ $--colors: (
   $colors: $--colors,
   $text-color: (
     "primary": initial,
-    "regular": #606266,
-    "secondary": #909399,
-    "placeholder": #c0c4cc,
+    "regular": #333333,
+    "secondary": #666666,
+    "placeholder": #CACACA,
   ),
   $border-radius: (
     "base": 4px,

@@ -1,16 +1,10 @@
-@use "@/styles/global-class.scss";
-@use "@/styles/theme.scss";
-@use "@/styles/element-status.scss";
+@use "@/styles/global-class";
+@use "@/styles/theme";
+@use "@/styles/element-status";
 @use "nprogress/nprogress.css";
 
 body {
-  width: 100vw;
-  color: #495164;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizelegibility;
-  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-  background-color: #f5f7fa;
+
 }
 
 html {
@@ -25,10 +19,7 @@ html {
 }
 
 :root body {
-  position: absolute;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+ 
 }
 
 #app,

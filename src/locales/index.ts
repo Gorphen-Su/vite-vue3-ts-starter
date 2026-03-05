@@ -2,7 +2,7 @@ import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/es/locale/lang/en'
 
 import selfEn from '@/locales/lang/en'
-import selfZhHans from '@/locales/lang/zh-hans'
+import selfZhCn from '@/locales/lang/zh-cn'
 
 
 /**
@@ -12,11 +12,11 @@ import selfZhHans from '@/locales/lang/zh-hans'
  */
 export const localesMapping = [
   {
-    localeCode: 'zh-hans',
+    localeCode: 'zh-cn',
     localeName: '简体中文',
     localeLang: {
       ...zhCn,
-      ...selfZhHans
+      ...selfZhCn
     }
   },
   {
@@ -29,9 +29,9 @@ export const localesMapping = [
   }
 ] as const
 
-export const currentLocaleMap = (targetLocaleCode) => {
+export const currentLocaleMap = (targetLocaleCode?: string) => {
   return localesMapping.find(
-    localeItem => localeItem.localeCode === targetLocaleCode
+    localeItem => localeItem.localeCode === targetLocaleCode || 'zh-CN'
   )
 }
 

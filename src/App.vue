@@ -10,18 +10,13 @@ watch(
   () => route.params,
   () => {
     if (route.name === '404') return
-
-    store.dispatch('UserAccount/setLanguage', {
-      locale: route.params.locale || defaultLanguageLocale
-    })
+    store.User.setLanguage(route.params.locale as string || defaultLanguageLocale)
   }
 )
 </script>
 
 <template>
-  <ElConfigProvider
-    :locale="currentLocaleLang"
-  >
+  <ElConfigProvider :locale="currentLocaleLang">
     <router-view />
   </ElConfigProvider>
 </template>

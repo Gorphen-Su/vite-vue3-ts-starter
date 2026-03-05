@@ -6,7 +6,7 @@ export const useLanguage = () => {
   const currentLocaleLang = computed(() => {
     let locale: any = null
 
-    const targetLocaleItem = currentLocaleMap(store.state.UserAccount.locale)
+    const targetLocaleItem = currentLocaleMap()
 
     if (targetLocaleItem) {
       locale = targetLocaleItem.localeLang

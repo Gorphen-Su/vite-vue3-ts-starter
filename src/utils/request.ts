@@ -2,8 +2,6 @@ import type { AxiosInstance } from 'axios'
 import axios from 'axios'
 import Cookie from 'js-cookie'
 
-import { camelizeKeys, decamelizeKeys } from '@/utils/camelCase'
-
 // redirect error
 function errorRedirect (url: string) {
   // Router.push(`/${url}`)
@@ -68,15 +66,6 @@ service.interceptors.request.use(
   request => {
     const token = Cookie.get('token')
 
-    // Conversion of hump nomenclature
-    if (
-      !(request.data instanceof FormData)
-    ) {
-      request.data = decamelizeKeys(request.data)
-    }
-
-    request.params = decamelizeKeys(request.params)
-
     /**
      * 让每个请求携带自定义 token
      * 请根据实际情况自行修改
@@ -84,11 +73,6 @@ service.interceptors.request.use(
     if (request.url === '/login') {
       return request
     }
-
-    Object.defineProperty(request.headers, 'Authorization', {
-      enumerable: true,
-      value: token as string
-    })
 
     return request
   },
@@ -122,7 +106,7 @@ service.interceptors.response.use(
         const reader = new FileReader()
         reader.onload = () => {
           response.data = JSON.parse(reader.result as string)
-          resolve(camelizeKeys(response.data))
+          resolve(response.data)
         }
 
         reader.readAsText(response.data)
@@ -135,7 +119,7 @@ service.interceptors.response.use(
       }
     }
 
-    return camelizeKeys(data)
+    return data
   },
   error => {
     /**

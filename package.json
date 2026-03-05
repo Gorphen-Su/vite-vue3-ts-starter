@@ -1,5 +1,5 @@
 {
-  "name": "vite-ts-starter",
+  "name": "vite-vue3-ts-starter",
   "description": "🐬 A Starter template built on Vite 7.x + Vue 3.x + Element Plus 2.x + TypeScript.",
   "version": "0.0.1",
   "author": "Wisdom <pdsu.wwz@foxmail.com>",
@@ -55,9 +55,9 @@
     "js-cookie": "^3.0.5",
     "lodash-es": "^4.17.22",
     "nprogress": "^0.2.0",
+    "pinia": "^3.0.4",
     "vue": "^3.5.26",
-    "vue-router": "^4.6.4",
-    "vuex": "^4.1.0"
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@babel/core": "^7.28.5",
