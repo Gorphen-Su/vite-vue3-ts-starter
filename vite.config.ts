@@ -2,7 +2,7 @@ import path from 'path'
 import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 
-import UnoCSS from 'unocss/vite'
+import tailwindcss from '@tailwindcss/vite'
 
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
       ? ''
       : '/',
     plugins: [
-      UnoCSS(),
+      tailwindcss(),
       vue(),
       AutoImport({
         include: [

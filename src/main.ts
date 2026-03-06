@@ -1,5 +1,3 @@
-import 'virtual:uno.css'
-
 import { setupRouter } from '@/router'
 import { setupStore } from '@/store'
 

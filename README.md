@@ -4,7 +4,7 @@
 [![thanks](https://badgen.net/badge/thanks/♥/pink)](https://github.com/Gorphen-Su)
 [![License](https://img.shields.io/github/license/pdsuwwz/vite-ts-starter?color=blue)](https://github.com/Gorphen-Su/vite-vue3-ts-starter/blob/main/LICENSE)
 
-🐬 A Starter template built on Vite 7.x + Vue 3.x + Element Plus 2.x + TypeScript + Husky + lint-staged.
+🐬 A Starter template built on Vite 7.x + Vue 3.x + Element Plus 2.x + TypeScript + Tailwind CSS 4.x + Husky + lint-staged.
 
 一个开箱即用，适合快速开发 Vue3 + Vite7 + TS 中小型 B 端后台管理系统的原型模板项目框架，持续更新最新技术栈 💪
 
@@ -31,23 +31,23 @@
 
 * Vue 3.x
 * Node >= 22.12.x
-* Pnpm 9.x | npm 11.6.x
+* npm >= 10.x
 * **VS Code 插件 `dbaeumer.vscode-eslint` >= v3.0.5 (pre-release)**
 
 
 
-## 安装和运行
+### 安装和运行
 
 * 安装依赖
 
 ```bash
-pnpm i
+npm install
 ```
 
 * 本地开发
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 ## 单元测试
@@ -55,13 +55,13 @@ pnpm dev
 * 执行单测
 
 ```bash
-pnpm test
+npm test
 ```
 
 * 执行覆盖率测试
 
 ```bash
-pnpm test:coverage
+npm run test:coverage
 ```
 
 ## 🌍 国际化 i18n 设置
@@ -115,5 +115,5 @@ export const localesMapping = [
 * 若 Husky 未生效，可能是由于未完成初始化，尝试执行以下命令进行初始化:
 
 ```bash
-pnpm run prepare
+npm run prepare
 ```
