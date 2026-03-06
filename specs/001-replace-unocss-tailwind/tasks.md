@@ -114,10 +114,10 @@
 - [x] T021 [P] 运行代码检查：`npm run lint`
 - [x] T022 [P] 验证 unplugin-icons 继续正常工作
 - [x] T023 验证 Element Plus 组件样式正常
-- [ ] T024 更新项目文档 (如 README.md) 反映 Tailwind CSS 使用
-- [ ] T025 提交 Git 变更并推送
+- [x] T024 更新项目文档 (如 README.md) 反映 Tailwind CSS 使用
+- [x] T025 提交 Git 变更并推送
 
-**检查点**: 所有验证完成 - 迁移项目完成
+**检查点**: 所有验证完成 - 迁移项目完成 ✅
 
 ---
 
@@ -210,8 +210,8 @@ del tailwind.config.js
 | 用户场景 1 | 5 | 5 ✅ |
 | 用户场景 2 | 4 | 4 ✅ |
 | 用户场景 3 | 6 | 6 ✅ |
-| 完善 (阶段 6) | 5 | 3 ✅ |
-| **总计** | **25** | **23/25** |
+| 完善 (阶段 6) | 5 | 5 ✅ |
+| **总计** | **25** | **25/25** ✅ |
 
 ### 关键路径
 
@@ -247,3 +247,4 @@ del tailwind.config.js
 | `vite.config.ts` | 修改 | 替换 UnoCSS 插件为 Tailwind CSS 插件 |
 | `uno.config.ts` | 删除 | 已迁移至 tailwind.config.js |
 | `src/main.ts` | 修改 | 移除 `virtual:uno.css` 导入 |
+| `README.md` | 修改 | 更新文档反映 Tailwind CSS 使用 |
