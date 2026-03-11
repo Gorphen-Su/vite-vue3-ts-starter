@@ -11,19 +11,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    404: typeof import('./src/components/404.vue')['default']
-    ElButton: typeof import('element-plus/es')['ElButton']
-    ElConfigProvider: typeof import('element-plus/es')['ElConfigProvider']
-    ElDialog: typeof import('element-plus/es')['ElDialog']
     IconFont: typeof import('./src/components/IconFont/index.vue')['default']
-    Layout: typeof import('./src/components/Layout/index.vue')['default']
-    LayoutArea: typeof import('./src/components/Layout/LayoutArea.vue')['default']
-    LayoutSection: typeof import('./src/components/Layout/LayoutSection.vue')['default']
-    LayoutView: typeof import('./src/components/Layout/LayoutView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-  }
-  export interface GlobalDirectives {
-    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
