@@ -39,12 +39,39 @@ src/utils/
     helper.spec.ts
 ```
 
-### V. API 契约与错误处理
+### V. 基础组件文件结构规范
+
+`src/components/` 下的基础组件统一遵循以下文件组织和代码规范：
+
+**标准目录结构：**
+```
+src/components/ComponentName/
+  index.vue       # 或 index.tsx - 组件主文件，仅负责暴露组件给外部使用
+  interface.ts    # 组件内部使用的所有类型定义（interface、type、enum 等）
+  helpers.ts      # 组件专用的工具函数存放于此
+  __tests__/
+    ComponentName.spec.ts  # 组件测试文件
+```
+
+**各文件职责说明：**
+- **index.vue | index.tsx**：组件主文件，只负责组件模板、样式和对外接口定义，避免堆积复杂业务逻辑
+- **interface.ts**：集中管理组件相关的类型定义，包括 Props、Emits、内部状态类型、常量枚举等
+- **helpers.ts**：存放组件内部使用的纯工具函数，确保函数可测试、无副作用
+
+**代码示例：**
+```
+src/components/ModalDialog/
+  index.vue
+  interface.ts    // 导出 ModalDialogProps, ModalDialogEmits 等
+  helpers.ts      // 导出 calculatePosition, formatContent 等
+```
+
+### VI. API 契约与错误处理
 
 所有 HTTP 请求通过统一的 `utils/request.ts` 封装，返回类型使用 `RespData<T>` 明确约束。  
 接口调用必须显式处理 `error`、`msg` 字段，对用户友好展示错误信息，同时避免在页面中散落裸 `axios` 调用。
 
-### VI. 可维护性与简洁性
+### VII. 可维护性与简洁性
 
 优先选择简单、可读性强的实现方式，避免过早抽象和不必要的封装。  
 任何“技巧性”实现都需要配有说明性注释或文档，并尽量保持替换/重构成本可控。
@@ -77,4 +104,4 @@ src/utils/
 任何需要突破现有约束的修改，必须在 PR 说明中写明理由和替代方案评估，通过评审后方可执行。  
 章程的修改通过 PR 进行：更新本文件，说明变更原因和影响范围，经团队确认后合并。
 
-**版本**: 1.0.0 | **批准日期**: 2026-03-05 | **最后修正**: 2026-03-05
+**版本**: 1.0.0 | **批准日期**: 2026-03-05 | **最后修正**: 2026-03-11
