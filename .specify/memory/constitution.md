@@ -46,24 +46,34 @@ src/utils/
 **标准目录结构：**
 ```
 src/components/ComponentName/
-  index.vue       # 或 index.tsx - 组件主文件，仅负责暴露组件给外部使用
-  interface.ts    # 组件内部使用的所有类型定义（interface、type、enum 等）
-  helpers.ts      # 组件专用的工具函数存放于此
+  index.vue                 # 或 index.tsx - 组件主文件，仅负责暴露组件给外部使用
+  interface.ts              # 组件内部使用的所有类型定义（interface、type、enum 等）
+  helpers.ts                # 组件专用的工具函数存放于此
+  ComponentName.stories.ts  # Storybook 组件文档和案例演示
   __tests__/
-    ComponentName.spec.ts  # 组件测试文件
+    ComponentName.spec.ts   # 组件测试文件
 ```
 
 **各文件职责说明：**
 - **index.vue | index.tsx**：组件主文件，只负责组件模板、样式和对外接口定义，避免堆积复杂业务逻辑
 - **interface.ts**：集中管理组件相关的类型定义，包括 Props、Emits、内部状态类型、常量枚举等
 - **helpers.ts**：存放组件内部使用的纯工具函数，确保函数可测试、无副作用
+- **ComponentName.stories.ts**：Storybook 组件文档文件，使用 CSF 3.0 格式定义组件的各种使用案例（Stories）
+
+**Stories 文件编写规范：**
+- 文件命名：使用 `ComponentName.stories.ts` 格式，与组件同级存放
+- 导入类型：从 `@storybook/vue3-vite` 导入 `Meta` 和 `StoryObj` 类型
+- 元数据配置：定义 `title`（导航路径）、`component`（组件引用）、`tags`（如 `autodocs`）、`argTypes`（属性控制）
+- 案例命名：使用 `Default`、`WithCustomProps`、`Disabled` 等语义化名称
+- 案例数量：每个组件至少提供 3 个不同的 Stories 案例
 
 **代码示例：**
 ```
 src/components/ModalDialog/
   index.vue
-  interface.ts    // 导出 ModalDialogProps, ModalDialogEmits 等
-  helpers.ts      // 导出 calculatePosition, formatContent 等
+  interface.ts            // 导出 ModalDialogProps, ModalDialogEmits 等
+  helpers.ts              // 导出 calculatePosition, formatContent 等
+  ModalDialog.stories.ts  // 导出 Default, WithFooter, Draggable 等案例
 ```
 
 ### VI. API 契约与错误处理
@@ -104,4 +114,4 @@ src/components/ModalDialog/
 任何需要突破现有约束的修改，必须在 PR 说明中写明理由和替代方案评估，通过评审后方可执行。  
 章程的修改通过 PR 进行：更新本文件，说明变更原因和影响范围，经团队确认后合并。
 
-**版本**: 1.0.0 | **批准日期**: 2026-03-05 | **最后修正**: 2026-03-11
+**版本**: 1.1.0 | **批准日期**: 2026-03-05 | **最后修正**: 2026-03-11
