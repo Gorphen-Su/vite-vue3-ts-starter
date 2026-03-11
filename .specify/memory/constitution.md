@@ -9,29 +9,52 @@
 
 ### II. 规范优先与自动化校验
 
-统一使用 TypeScript、ESLint、Stylelint、Prettier 和 Husky 进行规范约束，所有变更必须通过 `pnpm lint` 和 `pnpm test`（如配置）后才能合并。  
+统一使用 TypeScript、ESLint、Stylelint、Prettier 和 Husky 进行规范约束，所有变更必须通过 `npm run lint` 和 `npm run test`（如配置）后才能合并。  
 禁止在 CI/husky 中关闭规则绕过校验，如需放宽规则必须经过评审并在文档中说明原因。
 
 ### III. 组件化与可复用性
 
-优先编写通用组件（如 `ModalDialog`、表单控件、布局组件），抽离到 `components` / `widgets` 中复用。  
+优先编写通用组件（如 `ModalDialog`、表单控件、布局组件），抽离到 `components` / `widgets` 中复用。
 页面级组件只负责拼装布局和业务流程，不直接堆积复杂逻辑，复杂逻辑优先抽到 hooks（如 `useXXX`）或 store 中。
 
-### IV. API 契约与错误处理
+### IV. 测试覆盖与质量保证
+
+所有新增或修改的代码必须编写对应的单元测试用例：
+- **Components 组件**：`src/components/**` 下的所有组件需在各自目录的 `__tests__` 文件夹中编写 `.spec.ts` 测试文件
+- **Widgets 组件**：`src/widgets/**` 下的所有组件需在各自目录的 `__tests__` 文件夹中编写 `.spec.ts` 测试文件
+- **纯函数工具**：`src/utils/**` 及其他模块中的纯函数需在同级目录的 `__tests__` 文件夹中编写 `.spec.ts` 测试文件
+- **测试文件命名**：统一使用 `<组件名>.spec.ts` 或 `<函数名>.spec.ts` 格式
+- **测试内容**：至少覆盖正常输入、边界条件、错误处理三种场景
+
+测试文件目录结构示例：
+```
+src/components/
+  ExampleComponent/
+    index.vue
+    __tests__/
+      ExampleComponent.spec.ts
+src/utils/
+  helper.ts
+  __tests__/
+    helper.spec.ts
+```
+
+### V. API 契约与错误处理
 
 所有 HTTP 请求通过统一的 `utils/request.ts` 封装，返回类型使用 `RespData<T>` 明确约束。  
 接口调用必须显式处理 `error`、`msg` 字段，对用户友好展示错误信息，同时避免在页面中散落裸 `axios` 调用。
 
-### V. 可维护性与简洁性
+### VI. 可维护性与简洁性
 
 优先选择简单、可读性强的实现方式，避免过早抽象和不必要的封装。  
 任何“技巧性”实现都需要配有说明性注释或文档，并尽量保持替换/重构成本可控。
 
 ## 质量与非功能要求
 
-- **性能**：首屏加载控制在合理体积内，公共依赖（Vue、Element Plus、ECharts 等）通过按需加载或拆分路由懒加载管理。  
-- **样式规范**：全局样式集中在 `src/styles` 下管理，遵循约定的变量（`theme.scss`、`element-variables.scss`），禁止在组件内写大段未命名的魔法值。  
-- **国际化**：文案统一通过 locales 管理，新增/修改文案时同步更新语言包与对应的 `Translations` 使用。  
+- **测试覆盖**：新增代码测试覆盖率不低于 80%，核心组件和工具函数必须覆盖所有分支路径。
+- **性能**：首屏加载控制在合理体积内，公共依赖（Vue、Element Plus、ECharts 等）通过按需加载或拆分路由懒加载管理。
+- **样式规范**：全局样式集中在 `src/styles` 下管理，遵循约定的变量（`theme.scss`、`element-variables.scss`），禁止在组件内写大段未命名的魔法值。
+- **国际化**：文案统一通过 locales 管理，新增/修改文案时同步更新语言包与对应的 `Translations` 使用。
 - **安全性**：认证相关（token、用户信息）统一通过 store / Cookie 管理，不在组件中随意读写浏览器存储。
 
 ## 开发流程与评审流程

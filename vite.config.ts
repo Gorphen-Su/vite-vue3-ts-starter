@@ -175,8 +175,8 @@ export default defineConfig(({ mode }) => {
     },
     test: {
       globals: true,
-      dir: '__tests__',
       environment: 'jsdom',
+      includes: ['**/**/__tests__/*.{test,spec}.?(c|m)[jt]s?(x)'],
       alias: [
         {
           find: 'vue-i18n',

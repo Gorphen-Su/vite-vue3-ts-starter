@@ -2,7 +2,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Root',
-    component: () => import('@/components/Layout/index.vue'),
+    component: () => import('@/modules/System/layout/index.vue'),
     children: [
       {
         path: '',
@@ -25,7 +25,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/:pathMatch(.*)',
     name: '404',
-    component: () => import('@/components/404.vue')
+    component: () => import('@/modules/System/pages/404.vue')
   }
 ]
 

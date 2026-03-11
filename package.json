@@ -8,7 +8,6 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build --mode prod",
-    "deploy:gh-pages": "cross-env VITE_ROUTER_MODE=hash pnpm build",
     "preview": "vite preview --host",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
