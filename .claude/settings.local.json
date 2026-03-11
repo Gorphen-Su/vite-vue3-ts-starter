@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Read(//d/workspace/source-code/**)",
-      "Bash(.specify/scripts/bash/create-new-feature.sh --short-name \"storybook-docs\" \"增加 storebook 功能，基于 components、widgets 下的基础组件进行组件文档管理以及案例使用，安装 storebook 时候，需要注意当前项目 vite vue 版本支持问题，并基于当前项目情况初始化一个配置项。\")"
+      "Bash(.specify/scripts/bash/create-new-feature.sh --short-name \"storybook-docs\" \"增加 storebook 功能，基于 components、widgets 下的基础组件进行组件文档管理以及案例使用，安装 storebook 时候，需要注意当前项目 vite vue 版本支持问题，并基于当前项目情况初始化一个配置项。\")",
+      "Bash(D:/workspaces/source-code/vite-vue3-ts-starter/.specify/scripts/bash/create-new-feature.sh --short-name \"storybook-docs\" \"增加 storebook 功能，基于 components、widgets 下的基础组件进行组件文档管理以及案例使用，安装 storebook 时候，需要注意当前项目 vite vue 版本支持问题，并基于当前项目情况初始化一个配置项。\")",
+      "Bash(D:/workspaces/source-code/vite-vue3-ts-starter/.specify/scripts/bash/setup-plan.sh)",
+      "Bash(D:/workspaces/source-code/vite-vue3-ts-starter/.specify/scripts/bash/update-agent-context.sh claude:*)",
+      "Bash(D:/workspaces/source-code/vite-vue3-ts-starter/.specify/scripts/bash/check-prerequisites.sh --json)",
+      "Bash(D:/workspaces/source-code/vite-vue3-ts-starter/.specify/scripts/bash/verify-tasks.sh 2>&1 || echo \"Verification completed\")",
+      "Bash(D:/workspaces/source-code/vite-vue3-ts-starter/.specify/scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks 2>&1)",
+      "Bash(cd D:/workspaces/source-code/vite-vue3-ts-starter && pnpm dlx storybook@latest init --yes 2>&1)",
+      "Bash(cd D:/workspaces/source-code/vite-vue3-ts-starter && npm run lint:fix 2>&1 | tail -30)",
+      "Bash(cd D:/workspaces/source-code/vite-vue3-ts-starter && npm run build-storybook 2>&1 | tail -50)",
+      "Bash(cd D:/workspaces/source-code/vite-vue3-ts-starter && npm run build-storybook 2>&1 | tail -30)",
+      "Bash(cd D:/workspaces/source-code/vite-vue3-ts-starter && npm run lint:fix 2>&1 | tail -10)"
     ]
   }
 }
